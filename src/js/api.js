@@ -4,6 +4,9 @@ const search = document.querySelector('.js-btn');
 const inputElement = document.querySelector('.js-input');
 const showList = document.querySelector('.js-list');
 
+
+
+
 let show = [];
 
 
@@ -20,37 +23,31 @@ function getShowList(event) {
             console.error('Se ha producido un error:', error);;
         })
     paintShowCard();
-    listenToFavorite();
+
 }
 
 
 search.addEventListener('click', getShowList);
 
 function paintShowCard() {
-    const showList = document.querySelector('.js-list');
 
     for (let i = 0; i < show.length; i++) {
+        let classFav;
+        const favoriteIndex = fav.indexOf(i);
+        const favorite = favoriteIndex !== -1;
+        if (favorite === false) {
+            classFav = "favColor";
+            ˆ
+        }
+        else {
+            classF = "";
+        }
 
         const arrayShowImg = show[i].show.image.medium;
         const arrayShowName = show[i].show.name;
         const arrayShowId = show[i].show.id;
 
-
-        //creo Dom advanced
-        //lista
-        const newList = document.createElement('li');
-        const newContentList = document.createTextNode(arrayShowName);
-        newList.appendChild(newContentList);
-        showList.appendChild(newList);
-        newList.setAttribute('class', 'showCard js-fav');
-        newList.setAttribute('id', arrayShowId);
-
-        //imagen
-        const newImg = document.createElement('img');
-        newImg.setAttribute('src', arrayShowImg);
-
-        newImg.setAttribute('alt', 'Tv show');
-        newList.appendChild(newImg);
+        const newImg = createElements(arrayShowName, arrayShowId, arrayShowImg);
 
         if (arrayShowImg === null) {
             newImg = 'https://via.placeholder.com/210x295/ffffff/666666/?';
@@ -58,6 +55,27 @@ function paintShowCard() {
         } else {
             newImg;
         }
+        listenToFavorite();
+
     }
 
+
+    function createElements(arrayShowName, arrayShowId, arrayShowImg) {
+        const newList = document.createElement('li');
+        const newContentList = document.createTextNode(arrayShowName);
+        newList.appendChild(newContentList);
+        showList.appendChild(newList);
+        newList.setAttribute('class', 'showCard js-shows classFav');
+        newList.setAttribute('id', arrayShowId);
+
+        const newImg = document.createElement('img');
+        newImg.setAttribute('src', arrayShowImg);
+        newImg.setAttribute('alt', 'Tv show');
+        newList.appendChild(newImg);
+        return newImg;
+    }
 }
+
+
+
+
