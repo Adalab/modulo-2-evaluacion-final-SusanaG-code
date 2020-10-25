@@ -11,11 +11,31 @@
   background-color: #CCC;
   color: #000; }
 
-body {
-  padding: 2rem;
-  height: 100vh;
-  background: url("../images/logo-adalab.png") center center no-repeat #f3f4f5;
-  font-family: "Roboto", sans-serif; }
+.showCard {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  border: solid white 3px; }
+
+.list {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: wrap;
+  list-style: none;
+  border: solid white 5px;
+  margin-left: 300px; }
+
+.img {
+  width: 50px;
+  height: 50px;
+  display: block; }
+
+.favColor {
+  background-color: red; }
 
 .page__header {
   display: flex;
