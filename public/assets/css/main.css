@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.link__adalab:hover {
+  background-color: #099d8d;
+  color: #fff; }
+
+.link__github:hover {
+  background-color: #CCC;
+  color: #000; }
+
+.showCard {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  padding: 30px;
+  border: white solid 4px; }
+
+.list {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: wrap;
+  list-style: none; }
+
+.img {
+  width: 50px;
+  height: 50px;
+  display: block; }
+
+.fav {
+  background-color: red; }
+
+.page__header {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem; }
+
+.page__footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 1rem;
+  color: #999; }
+
+.main__list {
+  padding-left: 2rem; }
+
+/*# sourceMappingURL=main.css.map */

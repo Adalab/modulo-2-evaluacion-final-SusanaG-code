@@ -1,7 +1,36 @@
-body {
-  padding: 2rem;
-  height: 100vh;
-  background: url("../images/logo-adalab.png") center center no-repeat
-    $color-white;
-  font-family: $font-main;
+.showCard {
+    background-color: pink;
+    display:flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    padding:30px;
+    border:white solid 4px;
+    
 }
+
+.list{
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: wrap;
+    list-style: none;
+
+}
+
+.img {
+    width: 50px;
+    height:50px;
+    display: block;
+}
+
+
+
+
+.fav {
+ background-color: red;
+ }
+
+
+
