@@ -4,20 +4,25 @@
 //query selectors
 let fav = [];
 
+
 //añadir favoritos en un array
 function favoriteShows(ev) {
-    let classFav;
+
     const clicked = ev.currentTarget.id;
-    console.log(clicked);
+    const clickedElement = ev.currentTarget;
+
 
     const indexFav = fav.indexOf(clicked);
     const clickFavorite = indexFav !== -1;
     if (clickFavorite === false) {
         fav.push(clicked);
+        clickedElement.classList.add('showCardRev');
+
 
     }
     else {
         fav.splice(indexFav, 1);
+        clickedElement.classList.remove('showCardRev');
     }
 
 }

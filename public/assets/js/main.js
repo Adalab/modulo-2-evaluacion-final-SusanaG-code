@@ -5,10 +5,7 @@ const inputElement = document.querySelector('.js-input');
 const showList = document.querySelector('.js-list');
 
 
-
-
 let show = [];
-
 
 function getShowList(event) {
     event.preventDefault();
@@ -17,7 +14,6 @@ function getShowList(event) {
         .then(response => response.json())
         .then(data => {
             show = data;
-            console.log(show);
         })
         .catch(error => {
             console.error('Se ha producido un error:', error);;
@@ -32,16 +28,6 @@ search.addEventListener('click', getShowList);
 function paintShowCard() {
 
     for (let i = 0; i < show.length; i++) {
-        let classFav;
-        const favoriteIndex = fav.indexOf(i);
-        const favorite = favoriteIndex !== -1;
-        if (favorite === false) {
-            classFav = "favColor";
-            ˆ
-        }
-        else {
-            classF = "";
-        }
 
         const arrayShowImg = show[i].show.image.medium;
         const arrayShowName = show[i].show.name;
@@ -80,26 +66,38 @@ function paintShowCard() {
 
 
 
+
+
+
+
+
+
+
 'use strict';
 
 
 //query selectors
 let fav = [];
 
+
 //añadir favoritos en un array
 function favoriteShows(ev) {
-    let classFav;
+
     const clicked = ev.currentTarget.id;
-    console.log(clicked);
+    const clickedElement = ev.currentTarget;
+
 
     const indexFav = fav.indexOf(clicked);
     const clickFavorite = indexFav !== -1;
     if (clickFavorite === false) {
         fav.push(clicked);
+        clickedElement.classList.add('showCardRev');
+
 
     }
     else {
         fav.splice(indexFav, 1);
+        clickedElement.classList.remove('showCardRev');
     }
 
 }

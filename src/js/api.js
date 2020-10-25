@@ -5,10 +5,7 @@ const inputElement = document.querySelector('.js-input');
 const showList = document.querySelector('.js-list');
 
 
-
-
 let show = [];
-
 
 function getShowList(event) {
     event.preventDefault();
@@ -17,7 +14,6 @@ function getShowList(event) {
         .then(response => response.json())
         .then(data => {
             show = data;
-            console.log(show);
         })
         .catch(error => {
             console.error('Se ha producido un error:', error);;
@@ -32,16 +28,6 @@ search.addEventListener('click', getShowList);
 function paintShowCard() {
 
     for (let i = 0; i < show.length; i++) {
-        let classFav;
-        const favoriteIndex = fav.indexOf(i);
-        const favorite = favoriteIndex !== -1;
-        if (favorite === false) {
-            classFav = "favColor";
-            ˆ
-        }
-        else {
-            classF = "";
-        }
 
         const arrayShowImg = show[i].show.image.medium;
         const arrayShowName = show[i].show.name;
@@ -75,6 +61,13 @@ function paintShowCard() {
         return newImg;
     }
 }
+
+
+
+
+
+
+
 
 
 
