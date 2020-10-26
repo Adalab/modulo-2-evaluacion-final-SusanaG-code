@@ -3,58 +3,39 @@
 const search = document.querySelector('.js-btn');
 const inputElement = document.querySelector('.js-input');
 const showList = document.querySelector('.js-list');
-
-
+let userFavUl = document.querySelector('.js-fav-user');
 
 
 let show = [];
 
-
 function getShowList(event) {
-    event.preventDefault();
+    // event.preventDefault();
     const userValue = inputElement.value;
     fetch(`http://api.tvmaze.com/search/shows?q=${userValue}`)
         .then(response => response.json())
         .then(data => {
             show = data;
-            console.log(show);
+
+            paintShowCard();
         })
         .catch(error => {
-            console.error('Se ha producido un error:', error);;
+            console.error('Se ha producido un error:', error);
         })
-    paintShowCard();
 
 }
-
 
 search.addEventListener('click', getShowList);
 
 function paintShowCard() {
-
+    showList.innerHTML = '';
     for (let i = 0; i < show.length; i++) {
-        let classFav;
-        const favoriteIndex = fav.indexOf(i);
-        const favorite = favoriteIndex !== -1;
-        if (favorite === false) {
-            classFav = "favColor";
-            ˆ
-        }
-        else {
-            classF = "";
-        }
 
-        const arrayShowImg = show[i].show.image.medium;
+        const arrayShowImg = show[i].show.image;
         const arrayShowName = show[i].show.name;
         const arrayShowId = show[i].show.id;
 
         const newImg = createElements(arrayShowName, arrayShowId, arrayShowImg);
 
-        if (arrayShowImg === null) {
-            newImg = 'https://via.placeholder.com/210x295/ffffff/666666/?';
-            console.log('imagen');
-        } else {
-            newImg;
-        }
         listenToFavorite();
 
     }
@@ -67,14 +48,27 @@ function paintShowCard() {
         showList.appendChild(newList);
         newList.setAttribute('class', 'showCard js-shows classFav');
         newList.setAttribute('id', arrayShowId);
-
         const newImg = document.createElement('img');
-        newImg.setAttribute('src', arrayShowImg);
+        let urlImg = '';
+        if (arrayShowImg === null) {
+            urlImg = 'https://via.placeholder.com/210x295/ffffff/666666/?';
+
+        } else {
+            urlImg = arrayShowImg.medium;
+        }
+        newImg.setAttribute('src', urlImg);
         newImg.setAttribute('alt', 'Tv show');
         newList.appendChild(newImg);
         return newImg;
     }
 }
+
+
+
+
+
+
+
 
 
 
