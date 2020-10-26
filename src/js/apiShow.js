@@ -17,6 +17,7 @@ function getShowList(event) {
             show = data;
 
             paintShowCard();
+            paintFav();
         })
         .catch(error => {
             console.error('Se ha producido un error:', error);

@@ -4,7 +4,7 @@ function setLocalStorage() {
     localStorage.setItem('fav', JSON.stringify(fav));
 }
 function getLocalStorage() {
-    const favLocalStorage = JSON.parse(localStorage.getItem(fav));
+    const favLocalStorage = localStorage.getItem('fav');
     const favLocalStorageJ = JSON.parse(favLocalStorage)
     if (favLocalStorageJ === null) {
         getShowList();
@@ -12,4 +12,5 @@ function getLocalStorage() {
         fav = favLocalStorageJ;
     }
 }
+
 getLocalStorage();

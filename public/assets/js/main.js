@@ -1,20 +1,5 @@
 'use strict';
 
-function setLocalStorage() {
-    localStorage.setItem('fav', JSON.stringify(fav));
-}
-function getLocalStorage() {
-    const favLocalStorage = JSON.parse(localStorage.getItem(fav));
-    const favLocalStorageJ = JSON.parse(favLocalStorage)
-    if (favLocalStorageJ === null) {
-        getShowList();
-    } else {
-        fav = favLocalStorageJ;
-    }
-}
-getLocalStorage();
-'use strict';
-
 const search = document.querySelector('.js-btn');
 const inputElement = document.querySelector('.js-input');
 const showList = document.querySelector('.js-list');
@@ -32,6 +17,7 @@ function getShowList(event) {
             show = data;
 
             paintShowCard();
+            paintFav();
         })
         .catch(error => {
             console.error('Se ha producido un error:', error);
@@ -161,6 +147,22 @@ function paintFav() {
 
 
 
+'use strict';
+
+function setLocalStorage() {
+    localStorage.setItem('fav', JSON.stringify(fav));
+}
+function getLocalStorage() {
+    const favLocalStorage = localStorage.getItem('fav');
+    const favLocalStorageJ = JSON.parse(favLocalStorage)
+    if (favLocalStorageJ === null) {
+        getShowList();
+    } else {
+        fav = favLocalStorageJ;
+    }
+}
+
+getLocalStorage();
 
 'use strict';
 
