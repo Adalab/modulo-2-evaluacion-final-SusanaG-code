@@ -1,4 +1,4 @@
-"use strict";
+""use strict";
 
 //Global variables
 const search = document.querySelector(".js-btn");
@@ -53,7 +53,6 @@ function paintShowCard() {
     listenToFavorite();
   }
 }
-
 "use strict";
 
 //query selectors
