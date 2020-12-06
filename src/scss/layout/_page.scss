@@ -7,23 +7,23 @@
 
 .main {
   position: relative;
-  border: blue solid 4px;
+  // background-image: url(../../images/cinema-3700545_1920.jpg);
+  background-color: pink;
   height: 100vh;
-  width: 100%;
 
   &__section {
-    border: solid 3px black;
-    height: 100vh;
-    width: 100%;
-    background-color: lightgray;
+    // border: solid 3px black;
+    // height: 100vh;
+    // width: 100%;
+    // background-color: lightgray;
 
     &__form {
-      background-color: lightgreen;
-      // display: flex;
-      // justify-content: center;
       height: 40px;
       margin-top: 15px;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &__input {
         padding-left: 10px;
@@ -41,17 +41,11 @@
   }
 
   .list {
-    // display: flex;
-    // justify-content: center;
-    // flex-flow: wrap;
     list-style: none;
-    border: solid pink 5px;
-    background-color: blue;
     display: grid;
     margin-left: 300px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    // margin-left: 300px;
   }
 
   .showCard {
@@ -87,7 +81,6 @@
 }
 
 .favLi {
-  background-color: pink;
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
@@ -95,7 +88,7 @@
   width: 250px;
   height: 350px;
   border: solid white 3px;
-  color: purple;
+  color: white;
 }
 
 .btnFav {

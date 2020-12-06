@@ -19,33 +19,27 @@
 
 .main {
   position: relative;
-  border: blue solid 4px;
-  height: 100vh;
-  width: 100%; }
-  .main__section {
-    border: solid 3px black;
-    height: 100vh;
-    width: 100%;
-    background-color: lightgray; }
-    .main__section__form {
-      background-color: lightgreen;
-      height: 40px;
-      margin-top: 15px;
-      margin-bottom: 20px; }
-      .main__section__form__input {
-        padding-left: 10px;
-        margin-right: 10px;
-        margin-left: 30px;
-        height: 30px; }
-      .main__section__form__btn {
-        border-radius: 20px;
-        width: 60px;
-        height: 30px;
-        border-style: none; }
+  background-color: pink;
+  height: 100vh; }
+  .main__section__form {
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .main__section__form__input {
+      padding-left: 10px;
+      margin-right: 10px;
+      margin-left: 30px;
+      height: 30px; }
+    .main__section__form__btn {
+      border-radius: 20px;
+      width: 60px;
+      height: 30px;
+      border-style: none; }
   .main .list {
     list-style: none;
-    border: solid pink 5px;
-    background-color: blue;
     display: grid;
     margin-left: 300px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -78,7 +72,6 @@
   top: 100px; }
 
 .favLi {
-  background-color: pink;
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
@@ -86,7 +79,7 @@
   width: 250px;
   height: 350px;
   border: solid white 3px;
-  color: purple; }
+  color: white; }
 
 .btnFav {
   width: 30px;
